@@ -18,15 +18,15 @@ Theory
 
 Here is a mathematical model of the image degradation in frequency domain representation:
 
-[S = H\cdot U + N]
+[S = H/ U + N]
 
 where
-$S$ is a spectrum of blurred (degraded) image,
-$U$ is a spectrum of original true (undegraded) image,
-$H$ is a frequency response of point spread function (PSF),
-$N$ is a spectrum of additive noise.
+S is a spectrum of blurred (degraded) image,
+U is a spectrum of original true (undegraded) image,
+H is a frequency response of point spread function (PSF),
+N is a spectrum of additive noise.
 
-The circular PSF is a good approximation of out-of-focus distortion. Such a PSF is specified by only one parameter - radius $R$. Circular PSF is used in this work.
+The circular PSF is a good approximation of out-of-focus distortion. Such a PSF is specified by only one parameter - radius R. Circular PSF is used in this work.
 
 ![Circular point spread function](/www/images/psf.png)
 
@@ -34,11 +34,11 @@ The circular PSF is a good approximation of out-of-focus distortion. Such a PSF 
 
 The objective of restoration (deblurring) is to obtain an estimate of the original image. The restoration formula in frequency domain is:
 
-[U' = H_w\cdot S]
+[U' = H_w/ S]
 
 where
-$U'$ is the spectrum of estimation of original image $U$, and 
-$H_w$ is the restoration filter, for example, the Wiener filter.
+U' is the spectrum of estimation of original image U, and 
+H_w is the restoration filter, for example, the Wiener filter.
 
 ### What is the Wiener filter?
 
@@ -48,9 +48,9 @@ then a simplified Wiener formula is:
 [H_w = rac{H}{|H|^2+rac{1}{SNR}} ]
 
 where
-$SNR$ is signal-to-noise ratio.
+SNR is signal-to-noise ratio.
 
-So, in order to recover an out-of-focus image by Wiener filter, it needs to know the $SNR$ and $R$ of the circular PSF.
+So, in order to recover an out-of-focus image by Wiener filter, it needs to know the SNR and R of the circular PSF.
 
 Result
 ------
@@ -59,13 +59,13 @@ Below you can see the real out-of-focus image:
 ![Out-of-focus image](/www/images/original.jpg)
 
 
-Below result was completed by $R$ = 53 and $SNR$ = 5200 parameters:
+Below result was completed by R = 53 and SNR = 5200 parameters:
 ![The restored (deblurred) image](/www/images/recovered.jpg)
 
-The Wiener filter was used, and values of $R$ and $SNR$ were selected manually to give the best possible visual result.
+The Wiener filter was used, and values of R and SNR were selected manually to give the best possible visual result.
 We can see that the result is not perfect, but it gives us a hint to the image's content. With some difficulty, the text is readable.
 
-@note The parameter $R$ is the most important. So you should adjust $R$ first, then $SNR$.
+@note The parameter R is the most important. So you should adjust R first, then SNR.
 @note Sometimes you can observe the ringing effect in a restored image. This effect can be reduced with several methods. For example, you can taper input image edges.
 
 You can also find a quick video demonstration of this on

@@ -89,7 +89,7 @@ Result
 ------
 
 Below you can see the real out-of-focus image:
-![Out-of-focus image](images/original.jpg)
+![Out-of-focus image](/www/images/original.jpg)
 
 
 Below result was completed by \f$R\f$ = 53 and \f$SNR\f$ = 5200 parameters:

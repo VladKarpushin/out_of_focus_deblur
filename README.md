@@ -18,7 +18,7 @@ Theory
 
 Here is a mathematical model of the image degradation in frequency domain representation:
 
-[S = H/ U + N]
+[S = H*U + N]
 
 where
 S is a spectrum of blurred (degraded) image,
@@ -34,7 +34,7 @@ The circular PSF is a good approximation of out-of-focus distortion. Such a PSF 
 
 The objective of restoration (deblurring) is to obtain an estimate of the original image. The restoration formula in frequency domain is:
 
-[U' = H_w/ S]
+[U' = H_w*S]
 
 where
 U' is the spectrum of estimation of original image U, and 

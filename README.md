@@ -33,7 +33,7 @@ where
 
 The circular PSF is a good approximation of out-of-focus distortion. Such a PSF is specified by only one parameter - radius \f$R\f$. Circular PSF is used in this work.
 
-![Circular point spread function](psf.png)
+![Circular point spread function](/www/images/psf.png)
 
 ### How to restore a blurred image?
 
@@ -91,7 +91,7 @@ Below you can see the real out-of-focus image:
 
 
 Below result was completed by \f$R\f$ = 53 and \f$SNR\f$ = 5200 parameters:
-![The restored (deblurred) image](\www\images\recovered.jpg)
+![The restored (deblurred) image](/www/images/recovered.jpg)
 
 The Wiener filter was used, and values of \f$R\f$ and \f$SNR\f$ were selected manually to give the best possible visual result.
 We can see that the result is not perfect, but it gives us a hint to the image's content. With some difficulty, the text is readable.

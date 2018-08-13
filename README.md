@@ -16,9 +16,6 @@ In this tutorial you will learn:
 Theory
 ------
 
-@note The explanation is based on the books @cite gonzalez and @cite gruzman. Also, you can refer to Matlab's tutorial [Image Deblurring in Matlab] and the article [SmartDeblur].
-@note The out-of-focus image on this page is a real world  image. The out-of-focus was achieved manually by camera optics.
-
 ### What is a degradation image model?
 
 Here is a mathematical model of the image degradation in frequency domain representation:
@@ -57,32 +54,6 @@ where
 
 So, in order to recover an out-of-focus image by Wiener filter, it needs to know the \f$SNR\f$ and \f$R\f$ of the circular PSF.
 
-
-Source code
------------
-
-You can find source code in the `samples/cpp/tutorial_code/ImgProc/out_of_focus_deblur_filter/out_of_focus_deblur_filter.cpp` of the OpenCV source code library.
-
-@include cpp/tutorial_code/ImgProc/out_of_focus_deblur_filter/out_of_focus_deblur_filter.cpp
-
-Explanation
------------
-
-An out-of-focus image recovering algorithm consists of PSF generation, Wiener filter generation and filtering a blurred image in frequency domain:
-@snippet samples/cpp/tutorial_code/ImgProc/out_of_focus_deblur_filter/out_of_focus_deblur_filter.cpp main
-
-A function calcPSF() forms a circular PSF according to input parameter radius \f$R\f$:
-@snippet samples/cpp/tutorial_code/ImgProc/out_of_focus_deblur_filter/out_of_focus_deblur_filter.cpp calcPSF
-
-A function calcWnrFilter() synthesizes the simplified Wiener filter \f$H_w\f$ according to the formula described above:
-@snippet samples/cpp/tutorial_code/ImgProc/out_of_focus_deblur_filter/out_of_focus_deblur_filter.cpp calcWnrFilter
-
-A function fftshift() rearranges the PSF. This code was just copied from the tutorial @ref tutorial_discrete_fourier_transform "Discrete Fourier Transform":
-@snippet samples/cpp/tutorial_code/ImgProc/out_of_focus_deblur_filter/out_of_focus_deblur_filter.cpp fftshift
-
-A function filter2DFreq() filters the blurred image in the frequency domain:
-@snippet samples/cpp/tutorial_code/ImgProc/out_of_focus_deblur_filter/out_of_focus_deblur_filter.cpp filter2DFreq
-
 Result
 ------
 
@@ -101,7 +72,6 @@ We can see that the result is not perfect, but it gives us a hint to the image's
 
 You can also find a quick video demonstration of this on
 [YouTube](https://youtu.be/0bEcE4B0XP4).
-@youtube{0bEcE4B0XP4}
 
 References
 ------
